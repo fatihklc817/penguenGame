@@ -11,6 +11,7 @@ namespace Game.Scripts.Managers
         public EventManager EventManager;
         public PlayerController PlayerController;
         public CustomerController CustomerController;
+        public KitchenManager KitchenManager;
 
 
         private void Awake()
@@ -18,6 +19,7 @@ namespace Game.Scripts.Managers
             EventManager.Initialize(this);
             PlayerController.Initialize(this);
             CustomerController.Initialize(this);
+            KitchenManager.Initialize(this);
         }
     }
 }

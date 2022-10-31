@@ -27,6 +27,9 @@ public class CustomerController : CustomBehaviour
     private bool _isQueueSecondPosFilled;
     private bool _isQueueThirdPosFilled;
 
+    private bool _isClicking = false;
+    private bool _isAnyCharacterMoving;
+
     public override void Initialize(GameManager gameManager)
     {
         base.Initialize(gameManager);
@@ -36,9 +39,9 @@ public class CustomerController : CustomBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0) && !_isClicking)
         {
-
+            _isClicking = true;
 
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -68,28 +71,47 @@ public class CustomerController : CustomBehaviour
                 {
                     if (hit.transform.CompareTag("Table"))
                     {
-                        var targetPos = hit.transform.GetComponent<TableBehaviour>().CustomerStandPosition;
-                        if (!_selectedCustomer.IsMoving)
+                        var tableBehaviour = hit.transform.GetComponent<TableBehaviour>();
+                        var targetPos = tableBehaviour.CustomerStandPosition;
+                        if (!tableBehaviour.IsTableAvailable && !_isAnyCharacterMoving )
                         {
-                            
-                             StartCoroutine(changeIsAnyCustomerSelectedBoolToFalseCO());
+                            IsAnyCustomerSelected = false;
                             _selectedCustomer.SelectedboolBox.SetActive(false);
-                            _selectedCustomer.IsMoving = true;
-                            _selectedCustomer.transform.LookAt(targetPos);
-                            _isQueueFirstPosFilled = false;
-                            _queueFirstPosCustomer = null;
-                            MoveQueue();
-                            _selectedCustomer.transform.DOMove(targetPos.position, 10f).SetEase(Ease.Linear).SetSpeedBased().OnComplete(() =>
-                                {
-                                _selectedCustomer.Selectable = false;
-                                    _selectedCustomer.transform.LookAt(targetPos.parent.position);
-                                    _selectedCustomer = null; 
-                                });
-
+                            _selectedCustomer=null;
+                            
                         }
-                        else if(_selectedCustomer.IsMoving)
+                        else if (tableBehaviour.IsTableAvailable)
                         {
-                            return;
+
+                            if (!_selectedCustomer.IsMoving)
+                            {
+                                tableBehaviour.IsTableAvailable = false;
+                                StartCoroutine(changeIsAnyCustomerSelectedBoolToFalseCO());
+                                _selectedCustomer.SelectedboolBox.SetActive(false);
+                                _selectedCustomer.IsMoving = true;
+                                _isAnyCharacterMoving = true;
+                                _selectedCustomer.transform.LookAt(targetPos);
+                                _isQueueFirstPosFilled = false;
+                                _queueFirstPosCustomer = null;
+                                MoveQueue();
+                                _selectedCustomer.transform.DOMove(targetPos.position, 10f).SetEase(Ease.Linear).SetSpeedBased().OnComplete(() =>
+                                    {
+                                        
+                                        _selectedCustomer.Selectable = false;
+                                        _selectedCustomer.transform.LookAt(targetPos.parent.position);
+                                        _selectedCustomer.IsMoving = false;
+                                        _isAnyCharacterMoving = false;
+                                        _selectedCustomer.selectFood();
+                            
+
+                                        _selectedCustomer = null;
+                                    });
+
+                            }
+                            else if (_selectedCustomer.IsMoving)
+                            {
+                                return;
+                            }
                         }
                     }
                 }
@@ -102,7 +124,11 @@ public class CustomerController : CustomBehaviour
 
 
         }
-        
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            _isClicking = false;
+        }
     }
 
     IEnumerator changeIsAnyCustomerSelectedBoolToFalseCO()
@@ -111,10 +137,18 @@ public class CustomerController : CustomBehaviour
         IsAnyCustomerSelected = false;
     }
 
+   
+
     private void GetNewCustomerToRestaurant()
     {
         Debug.Log("yeni müþteri geldi");
-       var currentCustomer = Instantiate(_customerPrefab,_customerSpawnPosition);
+        if (_isQueueFirstPosFilled && _isQueueSecondPosFilled && _isQueueThirdPosFilled)
+        {
+            return;
+        }
+       var currentCustomer = Instantiate(_customerPrefab,_customerSpawnPosition);  
+         currentCustomer.GetComponent<CustomerBehaviour>().Initialize(this);
+
         if (!_isQueueFirstPosFilled)
         {
             currentCustomer.transform.DOMove(_customerQueuePositionOne.position, 1f);

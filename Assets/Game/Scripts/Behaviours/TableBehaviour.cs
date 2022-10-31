@@ -8,5 +8,8 @@ public class TableBehaviour : MonoBehaviour
     public Transform playerStandPoint;
     public Transform CustomerStandPosition;
 
+    public bool IsTableAvailable = true;
 
+    public bool IsTableSelected=false;
+  
 }

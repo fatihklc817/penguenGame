@@ -183,7 +183,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124321309
 GameObject:
@@ -402,6 +402,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStandPoint: {fileID: 300315805}
   CustomerStandPosition: {fileID: 465542586}
+  IsTableAvailable: 1
+  IsTableSelected: 0
 --- !u!65 &311944704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -465,104 +467,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311944701}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &345255619
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 345255623}
-  - component: {fileID: 345255622}
-  - component: {fileID: 345255621}
-  - component: {fileID: 345255620}
-  m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!64 &345255620
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 345255619}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &345255621
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 345255619}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 1492eb625375ee440bc1c52a6346546b, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &345255622
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 345255619}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &345255623
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 345255619}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9.857053, y: 9.857053, z: 9.857053}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &387605982
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +900,7 @@ MonoBehaviour:
   EventManager: {fileID: 841774132}
   PlayerController: {fileID: 1606870092}
   CustomerController: {fileID: 1458462967}
+  KitchenManager: {fileID: 917456874}
 --- !u!4 &637372317
 Transform:
   m_ObjectHideFlags: 0
@@ -1010,6 +915,7 @@ Transform:
   m_Children:
   - {fileID: 841774133}
   - {fileID: 1458462966}
+  - {fileID: 917456873}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1230,6 +1136,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1afc5a3286931c046a1f790aa1d39d1f, type: 3}
+--- !u!1 &917456872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 917456873}
+  - component: {fileID: 917456874}
+  m_Layer: 0
+  m_Name: KitchenManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &917456873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917456872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 637372317}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &917456874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917456872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 230221c08c481bf41ac4fffebd9e6f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FoodList:
+  - {fileID: 11400000, guid: 368a149607cfdc647a37a8fdaf2ce7f6, type: 2}
+  - {fileID: 11400000, guid: d32b6c35c1bc0e942b89477677dc32ec, type: 2}
+  - {fileID: 11400000, guid: 45d97826c0247e544ad0bfab4e349043, type: 2}
 --- !u!1 &938884487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,6 +1235,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStandPoint: {fileID: 1169034531}
   CustomerStandPosition: {fileID: 972731259}
+  IsTableAvailable: 1
+  IsTableSelected: 0
 --- !u!65 &938884490
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1395,6 +1351,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStandPoint: {fileID: 232168894}
   CustomerStandPosition: {fileID: 1633391504}
+  IsTableAvailable: 1
+  IsTableSelected: 0
 --- !u!65 &950294075
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1523,7 +1481,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1169034530
 GameObject:
@@ -1918,7 +1876,7 @@ Transform:
   - {fileID: 1534766374}
   - {fileID: 453530541}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1606870092
 MonoBehaviour:
@@ -2124,6 +2082,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStandPoint: {fileID: 37622419}
   CustomerStandPosition: {fileID: 1638113655}
+  IsTableAvailable: 1
+  IsTableSelected: 0
 --- !u!65 &1697020840
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2227,7 +2187,7 @@ Transform:
   - {fileID: 938884488}
   - {fileID: 1697020838}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1744789047
 GameObject:
@@ -2311,6 +2271,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStandPoint: {fileID: 1744789048}
   CustomerStandPosition: {fileID: 124321310}
+  IsTableAvailable: 1
+  IsTableSelected: 0
 --- !u!65 &1746282381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2403,7 +2365,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1860762452
 GameObject:
@@ -2522,6 +2484,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStandPoint: {fileID: 1623590575}
   CustomerStandPosition: {fileID: 676282148}
+  IsTableAvailable: 1
+  IsTableSelected: 0
 --- !u!65 &1996934604
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2631,7 +2595,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2127143933
 GameObject:
@@ -2729,5 +2693,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}

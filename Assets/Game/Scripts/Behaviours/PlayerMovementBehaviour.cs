@@ -9,6 +9,8 @@ public class PlayerMovementBehaviour : MonoBehaviour
     private bool _isMoving=false;
     private PlayerController _playerController;
 
+    private bool _isClicking = false;
+
     public void Initialize(PlayerController playerController)
     {
         _playerController = playerController;
@@ -23,8 +25,9 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0) && !_isClicking)
         {
+            _isClicking = true;
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 100f))
@@ -50,6 +53,11 @@ public class PlayerMovementBehaviour : MonoBehaviour
                 }
             }
         
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            _isClicking = false;
         }
     }
 }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e079b23901dffa4aaa98e0062d250c6, type: 3}
+  m_Name: pizza
+  m_EditorClassIdentifier: 
+  FoodName: pizza
+  FoodModel: {fileID: 0}
+  FoodTextBalloonImage: {fileID: 7835898935733028315, guid: 7f868f0e2331f554985a6101280c690f, type: 3}
+  TimeToCook: 10
+  Prize: 80
