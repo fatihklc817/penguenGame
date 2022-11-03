@@ -10,6 +10,8 @@ public class CustomerBehaviour : MonoBehaviour
 {
 
     public GameObject SelectedboolBox;
+    public TableBehaviour CustomerTable;
+
     public bool Selectable=true;
     public bool IsMoving = false;
 
@@ -36,12 +38,7 @@ public class CustomerBehaviour : MonoBehaviour
     //call when sat down
     public void selectFood()
     {
-        List<FoodTypesData> listofFood = _customerController.GameManager.KitchenManager.FoodList;
-        int randomIndex = Random.Range(0,listofFood.Count );
-        _mySelectedFood = listofFood[randomIndex];
-        Debug.Log(_mySelectedFood.FoodName);
-        var textBallon = Instantiate(_mySelectedFood.FoodTextBalloonImage, transform.position + new Vector3(-1f,1f,0f),Quaternion.Euler(36f,180f,0f));
-
+        StartCoroutine(SelectFootCO());
     }
 
     //call when player comes to take order
@@ -64,7 +61,20 @@ public class CustomerBehaviour : MonoBehaviour
     }
 
     
+    IEnumerator SelectFootCO()
+    {
+        yield return new WaitForSeconds(Random.Range(4f, 8f));
 
+        //SelectFoodFunction
+        List<FoodTypesData> listofFood = _customerController.GameManager.KitchenManager.FoodList;
+        int randomIndex = Random.Range(0, listofFood.Count);
+        _mySelectedFood = listofFood[randomIndex];
+        Debug.Log(_mySelectedFood.FoodName);
+        CustomerTable.OrderedFoodName = _mySelectedFood.FoodName;
+        var textBallon = Instantiate(_mySelectedFood.FoodTextBalloonImage, transform.position + new Vector3(-1f, 1f, 0f), Quaternion.Euler(36f, 180f, 0f));
+
+
+    }
 
 
 }

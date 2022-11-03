@@ -404,6 +404,7 @@ MonoBehaviour:
   CustomerStandPosition: {fileID: 465542586}
   IsTableAvailable: 1
   IsTableSelected: 0
+  OrderedFoodName: 
 --- !u!65 &311944704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1237,6 +1238,7 @@ MonoBehaviour:
   CustomerStandPosition: {fileID: 972731259}
   IsTableAvailable: 1
   IsTableSelected: 0
+  OrderedFoodName: 
 --- !u!65 &938884490
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1353,6 +1355,7 @@ MonoBehaviour:
   CustomerStandPosition: {fileID: 1633391504}
   IsTableAvailable: 1
   IsTableSelected: 0
+  OrderedFoodName: 
 --- !u!65 &950294075
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1574,7 +1577,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e8c05c137d557e8459a99055b8b49ad2, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e8c05c137d557e8459a99055b8b49ad2, type: 3}
       propertyPath: m_LocalScale.x
@@ -1840,6 +1843,7 @@ GameObject:
   - component: {fileID: 1606870090}
   - component: {fileID: 1606870092}
   - component: {fileID: 1606870093}
+  - component: {fileID: 1606870094}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1904,6 +1908,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.6491995, z: 1}
   m_Center: {x: 0, y: 0.32459974, z: 0}
+--- !u!95 &1606870094
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606870089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 1afc5a3286931c046a1f790aa1d39d1f, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1623300261
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,6 +2108,7 @@ MonoBehaviour:
   CustomerStandPosition: {fileID: 1638113655}
   IsTableAvailable: 1
   IsTableSelected: 0
+  OrderedFoodName: 
 --- !u!65 &1697020840
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2273,6 +2298,7 @@ MonoBehaviour:
   CustomerStandPosition: {fileID: 124321310}
   IsTableAvailable: 1
   IsTableSelected: 0
+  OrderedFoodName: 
 --- !u!65 &1746282381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2486,6 +2512,7 @@ MonoBehaviour:
   CustomerStandPosition: {fileID: 676282148}
   IsTableAvailable: 1
   IsTableSelected: 0
+  OrderedFoodName: 
 --- !u!65 &1996934604
 BoxCollider:
   m_ObjectHideFlags: 0

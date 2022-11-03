@@ -11,5 +11,7 @@ public class TableBehaviour : MonoBehaviour
     public bool IsTableAvailable = true;
 
     public bool IsTableSelected=false;
+
+    public string OrderedFoodName;
   
 }

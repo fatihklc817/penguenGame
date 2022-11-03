@@ -1,8 +1,23 @@
 fileFormatVersion: 2
-guid: 1afc5a3286931c046a1f790aa1d39d1f
+guid: cfa4b32103d4c0245a3fbc41264051db
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 885944232402757753
+    second: Armature|Action
+  - first:
+      74: -2597508838640736535
+    second: Armature|callWaitress
+  - first:
+      74: -8741847179151120200
+    second: Armature|eating
+  - first:
+      74: 7168293901883076996
+    second: Armature|walking
+  - first:
+      74: 8061465127764819259
+    second: "Armature|\u0131dle"
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -24,7 +39,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -80,12 +95,7 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton:
-    - name: penguen_yeni1(Clone)
-      parentName: 
-      position: {x: -0, y: 1.884964, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 100, y: 100, z: 100}
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -100,9 +110,9 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0

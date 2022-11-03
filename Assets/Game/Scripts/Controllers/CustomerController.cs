@@ -87,6 +87,7 @@ public class CustomerController : CustomBehaviour
                             {
                                 tableBehaviour.IsTableAvailable = false;
                                 StartCoroutine(changeIsAnyCustomerSelectedBoolToFalseCO());
+                                _selectedCustomer.CustomerTable = tableBehaviour;
                                 _selectedCustomer.SelectedboolBox.SetActive(false);
                                 _selectedCustomer.IsMoving = true;
                                 _isAnyCharacterMoving = true;
